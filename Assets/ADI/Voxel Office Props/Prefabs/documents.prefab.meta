@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 9ae45fdfc92844d42a484dd8a4e0ae0d
+timeCreated: 1536048560
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/documents.prefab
+  uploadId: 267845

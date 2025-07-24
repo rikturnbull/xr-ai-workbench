@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 79a5b937093a5864d91d9a3a836ff1d7
+timeCreated: 1536051282
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/printer.prefab
+  uploadId: 267845

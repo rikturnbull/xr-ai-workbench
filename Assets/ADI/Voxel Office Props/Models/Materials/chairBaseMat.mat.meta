@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3df406c59a01f734f81beb6c0fa3e765
+timeCreated: 1536045294
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Models/Materials/chairBaseMat.mat
+  uploadId: 267845

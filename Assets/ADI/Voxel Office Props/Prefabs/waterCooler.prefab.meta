@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a5175282aa463ff41a8fbb002ea1a60a
+timeCreated: 1536051658
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/waterCooler.prefab
+  uploadId: 267845

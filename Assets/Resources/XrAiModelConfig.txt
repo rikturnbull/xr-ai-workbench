@@ -1,0 +1,137 @@
+{
+    "sections": [
+        {
+            "sectionName": "Google.ImageToText",
+            "properties": [
+                {
+                    "key": "prompt",
+                    "value": "Create a short description of this image"
+                },
+                {
+                    "key": "url",
+                    "value": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+                }
+            ]
+        },
+        {
+            "sectionName": "Groq.ImageToText",
+            "properties": [
+                {
+                    "key": "model",
+                    "value": "meta-llama/llama-4-scout-17b-16e-instruct"
+                },
+                {
+                    "key": "prompt",
+                    "value": "Create a short description of this image"
+                }
+            ]
+        },
+        {
+            "sectionName": "Roboflow.ImageToText",
+            "properties": [
+                {
+                    "key": "modelEndpoint",
+                    "value": "coco/37"
+                },
+                {
+                    "key": "url",
+                    "value": "https://serverless.roboflow.com/"
+                }
+            ]
+        },
+        {
+            "sectionName": "Google.ObjectDetector",
+            "properties": [
+                {
+                    "key": "url",
+                    "value": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+                }
+            ]
+        },
+        {
+            "sectionName": "Yolo",
+            "properties": [
+                {
+                    "key": "modelPath",
+                    "value": "Assets/Resources/Yolo/yolo11n-seg-sentis.sentis"
+                },
+                {
+                    "key": "labelsPath",
+                    "value": "Yolo/yolo11n-labels"
+                }
+            ]
+        },
+        {
+            "sectionName": "Nvidia.ImageToText",
+            "properties": [
+                {
+                    "key": "prompt",
+                    "value": "Create a short description of this image"
+                },
+                {
+                    "key": "model",
+                    "value": "meta/llama-3.2-90b-vision-instruct"
+                },
+                {
+                    "key": "url",
+                    "value": "https://integrate.api.nvidia.com/v1/chat/completions"
+                }
+            ]
+        },
+        {
+            "sectionName": "Roboflow.ObjectDetector",
+            "properties": [
+                {
+                    "key": "url",
+                    "value": "https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection"
+                }
+            ]
+        },
+        {
+            "sectionName": "RoboflowLocal.ObjectDetector",
+            "properties": [
+                {
+                    "key": "url",
+                    "value": "http://localhost:9001/infer/workflows/xr-shu81/yolov11-object-detection"
+                }
+            ]
+        },
+        {
+            "sectionName": "Nvidia",
+            "properties": []
+        },
+        {
+            "sectionName": "OpenAI",
+            "properties": []
+        },
+        {
+            "sectionName": "StabilityAi",
+            "properties": []
+        },
+        {
+            "sectionName": "Google",
+            "properties": []
+        },
+        {
+            "sectionName": "Groq",
+            "properties": []
+        },
+        {
+            "sectionName": "Roboflow",
+            "properties": []
+        },
+        {
+            "sectionName": "RoboflowLocal",
+            "properties": []
+        },
+        {
+            "sectionName": "OpenAI.SpeechToText",
+            "properties": [
+                {
+                    "key": "model",
+                    "value": "whisper-1"
+                }
+            ]
+        }
+    ]
+}

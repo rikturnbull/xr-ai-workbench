@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 441fc74832b5da141a0b2b81614e671f
+timeCreated: 1536048622
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Models/Materials/fillingCabinetNoDrawsMat.mat
+  uploadId: 267845

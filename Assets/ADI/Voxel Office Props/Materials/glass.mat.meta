@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 757ca598e3c89ac479db1a7c24999c02
+timeCreated: 1536044990
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Materials/glass.mat
+  uploadId: 267845

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 769d0371e7869b74db5b2dd0139d5279
+timeCreated: 1536049652
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/keypad.prefab
+  uploadId: 267845

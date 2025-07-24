@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f848ae8b34c5b714b85b07dbacbaf67a
+timeCreated: 1536052872
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Models/Materials/pcMat.mat
+  uploadId: 267845

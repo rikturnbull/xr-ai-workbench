@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c1d75a91ec5a28c4689c58e8f48d944c
+timeCreated: 1536052636
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/tableCentreLit.prefab
+  uploadId: 267845

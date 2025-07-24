@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e46c83b5705b0a9429c8836bab32da4f
+timeCreated: 1536051473
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/projector.prefab
+  uploadId: 267845

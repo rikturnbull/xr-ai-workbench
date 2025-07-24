@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 933c5ab141b1aec46b263105a2d58288
+timeCreated: 1536052676
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/tableEndLit.prefab
+  uploadId: 267845

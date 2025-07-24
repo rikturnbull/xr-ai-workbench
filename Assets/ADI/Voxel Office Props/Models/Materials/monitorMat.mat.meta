@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c2db1c77661b6cd4dbe551575416f8fa
+timeCreated: 1536050548
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Models/Materials/monitorMat.mat
+  uploadId: 267845

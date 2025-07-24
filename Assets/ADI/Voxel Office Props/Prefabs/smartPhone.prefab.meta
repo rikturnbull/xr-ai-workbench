@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 55938a3ad12a56d45af0710ba85a7f67
+timeCreated: 1536051897
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Prefabs/smartPhone.prefab
+  uploadId: 267845

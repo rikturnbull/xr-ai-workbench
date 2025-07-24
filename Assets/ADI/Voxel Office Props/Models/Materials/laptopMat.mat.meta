@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3de5e8cb9e06b0840836940cd9b622ab
+timeCreated: 1536049995
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 127772
+  packageName: Voxel Office Props
+  packageVersion: 1.0
+  assetPath: Assets/ADI/Voxel Office Props/Models/Materials/laptopMat.mat
+  uploadId: 267845
