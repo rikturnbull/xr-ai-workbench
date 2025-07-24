@@ -66,6 +66,6 @@ crashlytics-build.properties
 # Repo
 .utmp
 Assets/Resources/Yolo/yolo11n*
-Assets/Resources/XrAiApiKeys.txt
+Assets/Resources/XrAiApiKeys.txt*
 Assets/Samples/
 Recordings/
