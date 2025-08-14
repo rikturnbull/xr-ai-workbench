@@ -53,7 +53,8 @@ public class ScreenShotBehaviour : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(1f);
-            LoadWebCamTexture();
+            LoadResourceImage();
+            // LoadWebCamTexture();
         }
 
     }
