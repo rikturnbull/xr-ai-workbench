@@ -128,11 +128,11 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
+        "com.unity.burst": "1.8.4",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.mathematics": "1.1.0",
-        "com.unity.modules.uielements": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.burst": "1.8.4"
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -587,6 +587,16 @@
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
       "url": "https://package.openupm.com"
+    },
+    "com.xrai.accelerator": {
+      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.openai.unity": "8.8.1",
+        "com.unity.ai.inference": "2.2.1"
+      },
+      "hash": "7d1eaae37798f5860e709bcd746755b8f9cee211"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
