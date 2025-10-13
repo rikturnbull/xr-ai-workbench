@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using Utilities.Async;
 using XrAiAccelerator;
 
 public class TextToSpeechInference : BaseAiInference<AudioClip>
@@ -14,8 +17,35 @@ public class TextToSpeechInference : BaseAiInference<AudioClip>
             throw new ArgumentException("No text to convert to speech.");
         }
 
-        IXrAiTextToSpeech textToSpeech = XrAiFactory.LoadTextToSpeech(model, globalProperties);
-        _task = textToSpeech.Execute(_resultText.text, GetWorkflowProperties(model, XrAiModelManager.WORKFLOW_TEXT_TO_SPEECH));
+        StartCoroutine(ExecuteCoroutine(model, globalProperties));
+    }
+
+    private IEnumerator ExecuteCoroutine(string model, Dictionary<string, string> globalProperties)
+    {
+        IXrAiTextToSpeech textToSpeech = XrAiFactory.LoadTextToSpeech(model);
+        textToSpeech.Initialize(globalProperties);
+        yield return null;
+
+        if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
+
+        _currentTask = textToSpeech.Execute(
+            _resultText.text,
+            GetWorkflowProperties(model, XrAiFactory.WORKFLOW_TEXT_TO_SPEECH),
+            OnTextToSpeechResult
+        ).WithCancellation(_cancellationTokenSource.Token);
+        yield return new WaitUntil(() => _currentTask.IsCompleted || _cancellationTokenSource.Token.IsCancellationRequested);
+    }
+
+    private void OnTextToSpeechResult(XrAiResult<AudioClip> result)
+    {
+        if (result.IsSuccess)
+        {
+            ProcessResult(result.Data);
+        }
+        else
+        {
+            Debug.LogError($"Text-to-speech failed: {result.ErrorMessage}");
+        }
     }
 
     protected override void ProcessResult(AudioClip data)
