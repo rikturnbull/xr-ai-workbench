@@ -84,6 +84,10 @@
                 {
                     "key": "url",
                     "value": "https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection"
+                },
+                {
+                    "key": "modelId",
+                    "value": ""
                 }
             ]
         },
@@ -92,7 +96,11 @@
             "properties": [
                 {
                     "key": "url",
-                    "value": "http://localhost:9001/infer/workflows/xr-shu81/yolov11-object-detection"
+                    "value": "http://localhost:9001/infer/object_detection"
+                },
+                {
+                    "key": "modelId",
+                    "value": "dataset-ridimensionato-omcv7/1"
                 }
             ]
         },
@@ -106,7 +114,12 @@
         },
         {
             "sectionName": "StabilityAi",
-            "properties": []
+            "properties": [
+                {
+                    "key": "url",
+                    "value": "https://api.stability.ai/v2beta/3d/stable-fast-3d"
+                }
+            ]
         },
         {
             "sectionName": "Google",
@@ -114,7 +127,12 @@
         },
         {
             "sectionName": "Groq",
-            "properties": []
+            "properties": [
+                {
+                    "key": "model",
+                    "value": "llama-3.2-11b-vision-preview"
+                }
+            ]
         },
         {
             "sectionName": "Roboflow",
@@ -130,6 +148,15 @@
                 {
                     "key": "model",
                     "value": "whisper-1"
+                }
+            ]
+        },
+        {
+            "sectionName": "OpenAI.TextToImage",
+            "properties": [
+                {
+                    "key": "prompt",
+                    "value": ""
                 }
             ]
         }

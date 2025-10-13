@@ -1,61 +1,35 @@
 using System;
-using System.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using XrAiAccelerator;
+using Utilities.Async;
 
 public class SpeechToTextInference : MonoBehaviour
 {
     [SerializeField] private TMP_Text _statusText;
     [SerializeField] private TMP_Text _resultText;
-    [SerializeField] private ParticleSystem _loadingParticles;
 
-    private Task<XrAiResult<string>> _task;
+    // private Task<XrAiResult<string>> _task;
     private XrAiModelManager _modelManager;
     private XrAiSpeechToTextHelper _speechToTextHelper;
     private string _model;
+    private Task _currentTask;
+    private CancellationTokenSource _cancellationTokenSource;
 
     void Start()
     {
         _speechToTextHelper = gameObject.AddComponent<XrAiSpeechToTextHelper>();
-        _modelManager = FindFirstObjectByType<XrAiModelManager>();
-    }
-
-    private void Update()
-    {
-        if (_task != null)
-        {
-            if (!_task.IsCompleted) return;
-
-            if (_task.IsFaulted)
-            {
-                _statusText.text = _task.Exception.Message;
-                _loadingParticles.Stop();
-                _task = null;
-                return;
-            }
-
-            XrAiResult<string> result = _task.Result;
-            if (result == null)
-            {
-                _statusText.text = "No result returned from speech to text.";
-                _loadingParticles.Stop();
-                _task = null;
-                return;
-            }
-
-            _resultText.text = result.Data;
-            _loadingParticles.Stop();
-            _task = null;
-        }
+        _modelManager = XrAiModelManager.GetModelManager();
     }
 
     public void OnClick(string model)
     {
         try
         {
-            _loadingParticles.Play();
             _statusText.text = "Recording for 5 seconds...";
             _model = model;
             _speechToTextHelper.StartRecording(
@@ -66,7 +40,6 @@ public class SpeechToTextInference : MonoBehaviour
         }
         catch (Exception ex)
         {
-            _loadingParticles.Stop();
             _statusText.text = ex.Message;
         }
     }
@@ -85,21 +58,42 @@ public class SpeechToTextInference : MonoBehaviour
     private void OnRecordingComplete(byte[] audioData)
     {
         _statusText.text = "Recording complete, processing audio...";
-        try
-        {
-            Dictionary<string, string> globalProperties = _modelManager.GetGlobalProperties(_model);
-            IXrAiSpeechToText speechToText = XrAiFactory.LoadSpeechToText(_model, globalProperties);
-            Dictionary<string, string> properties = _modelManager.GetWorkflowProperties(
+        StartCoroutine(ExecuteCoroutine(audioData, OnSpeechToTextResult));
+    }
+
+    private IEnumerator ExecuteCoroutine(byte[] audioData, Action<XrAiResult<string>> callback)
+    {
+        _cancellationTokenSource?.Cancel();
+        _cancellationTokenSource = new CancellationTokenSource();
+
+        Dictionary<string, string> globalProperties = _modelManager.GetGlobalProperties(_model);
+        IXrAiSpeechToText speechToText = XrAiFactory.LoadSpeechToText(_model);
+        speechToText.Initialize(globalProperties);
+        yield return null;
+
+        if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
+
+        _currentTask = speechToText.Execute(
+            audioData,
+            _modelManager.GetWorkflowProperties(
                 _model,
-                XrAiModelManager.WORKFLOW_SPEECH_TO_TEXT
-            );
-            _task = speechToText.Execute(audioData, properties);
-        }
-        catch (Exception ex)
+                XrAiFactory.WORKFLOW_SPEECH_TO_TEXT
+            ),
+            callback
+        ).WithCancellation(_cancellationTokenSource.Token);
+        yield return new WaitUntil(() => _currentTask.IsCompleted || _cancellationTokenSource.Token.IsCancellationRequested);
+    }
+
+    private void OnSpeechToTextResult(XrAiResult<string> result)
+    {
+        if (!result.IsSuccess)
         {
-            _loadingParticles.Stop();
-            _statusText.text = ex.Message;
+            Debug.LogException(new Exception(result.ErrorMessage));
+            _statusText.text = result.ErrorMessage;
             return;
         }
+
+        _statusText.text = "Transcription complete.";
+        _resultText.text = result.Data ?? "No text recognized.";
     }
 }

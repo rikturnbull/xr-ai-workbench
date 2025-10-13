@@ -1,16 +1,47 @@
-using UnityEngine;
-using System;
-using System.Collections.Generic;
-using Siccity.GLTFUtility;
 using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
+using Siccity.GLTFUtility;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
+using Utilities.Async;
 using XrAiAccelerator;
 
 public class ImageTo3dInference : BaseAiInference<byte[]>
 {
     protected override void Execute(string model, Dictionary<string, string> globalProperties)
     {
-        IXrAImageTo3d imageTo3d = XrAiFactory.LoadImageTo3d(model, globalProperties);
-        _task = imageTo3d.Execute(GetFrame().GetTexture(), GetWorkflowProperties(model, XrAiModelManager.WORKFLOW_IMAGE_TO_3D));
+        StartCoroutine(ExecuteCoroutine(model, globalProperties));
+    }
+
+    private IEnumerator ExecuteCoroutine(string model, Dictionary<string, string> globalProperties)
+    {
+        IXrAiImageTo3d imageTo3d = XrAiFactory.LoadImageTo3d(model);
+        imageTo3d.Initialize(globalProperties);
+        if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
+
+        _currentTask = imageTo3d.Execute(
+            GetFrame().GetTexture(),
+            GetWorkflowProperties(model, XrAiFactory.WORKFLOW_IMAGE_TO_3D),
+            OnImageTo3dResult
+        ).WithCancellation(_cancellationTokenSource.Token);
+        yield return new WaitUntil(() => _currentTask.IsCompleted || _cancellationTokenSource.Token.IsCancellationRequested);
+    }
+
+    private void OnImageTo3dResult(XrAiResult<byte[]> result)
+    {
+        StopTimer();
+
+        if (!result.IsSuccess)
+        {
+            Debug.LogException(new Exception(result.ErrorMessage));
+            _statusText.text = result.ErrorMessage;
+            return;
+        }
+
+        ProcessResult(result.Data);
     }
 
     protected override void ProcessResult(byte[] data)
@@ -28,8 +59,7 @@ public class ImageTo3dInference : BaseAiInference<byte[]>
             gameObject.transform.rotation = instantiatePosition.rotation;
             gameObject.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
 
-            // Make GameObject grabbable with Meta SDK
-            SetupGrabbableObject(gameObject);
+            SetupGrabbableObject(gameObject.transform.GetChild(0).gameObject);
         }
         else
         {
@@ -39,35 +69,26 @@ public class ImageTo3dInference : BaseAiInference<byte[]>
 
     private void SetupGrabbableObject(GameObject obj)
     {
-        // Add Rigidbody if not present
-        if (obj.GetComponent<Rigidbody>() == null)
-        {
-            Rigidbody rb = obj.AddComponent<Rigidbody>();
-            rb.mass = 1f;
-            rb.useGravity = false;
-            rb.isKinematic = false; // Must be false for grabbing to work
-        }
+        Rigidbody rb = obj.AddComponent<Rigidbody>();
+        rb.mass = 1f;
+        rb.useGravity = false;
+        rb.isKinematic = true;
 
-        // Add collider if not present
-        if (obj.GetComponent<Collider>() == null)
-        {
-            MeshCollider meshCollider = obj.AddComponent<MeshCollider>();
-            meshCollider.convex = true;
-        }
+        MeshCollider meshCollider = obj.AddComponent<MeshCollider>();
+        meshCollider.convex = true;
 
-        // Add Grabbable component from Oculus Interaction
-        if (obj.GetComponent<Grabbable>() == null)
-        {
-            obj.AddComponent<Grabbable>();
-        }
-        
-        // Add GrabInteractable for hand tracking
-        if (obj.GetComponent<GrabInteractable>() == null)
-        {
-            obj.AddComponent<GrabInteractable>();
-        }
+        Grabbable grabbable = obj.AddComponent<Grabbable>();
+        grabbable.InjectOptionalRigidbody(rb);
+        grabbable.InjectOptionalTargetTransform(obj.transform);
 
-        // Ensure object is on the correct layer for interaction
+        HandGrabInteractable handGrabInteractable = obj.AddComponent<HandGrabInteractable>();
+        handGrabInteractable.InjectOptionalPointableElement(grabbable);
+        handGrabInteractable.InjectRigidbody(rb);
+
+        GrabInteractable grabInteractable = obj.AddComponent<GrabInteractable>();
+        grabInteractable.InjectOptionalPointableElement(grabbable);
+        grabInteractable.InjectRigidbody(rb);
+
         obj.layer = LayerMask.NameToLayer("Default");
     }
 

@@ -90,18 +90,35 @@ public class FrameBehaviour : MonoBehaviour
         float textureAspectRatio = (float)texture.width / texture.height;
         float containerAspectRatio = containerWidth / containerHeight;
 
+        // Reset uvRect to show full texture
+        rawImage.uvRect = new Rect(0, 0, 1, 1);
+
+        // Scale the RawImage to fit the texture while maintaining aspect ratio
         if (textureAspectRatio > containerAspectRatio)
         {
-            float scale = containerAspectRatio / textureAspectRatio;
-            float yOffset = (1f - scale) * 0.5f;
-            rawImage.uvRect = new Rect(0, yOffset, 1, scale);
+            // Image is wider than container - fit width, scale height
+            float newHeight = containerWidth / textureAspectRatio;
+            rectTransform.sizeDelta = new Vector2(containerWidth, newHeight);
         }
         else
         {
-            float scale = textureAspectRatio / containerAspectRatio;
-            float xOffset = (1f - scale) * 0.5f;
-            rawImage.uvRect = new Rect(xOffset, 0, scale, 1);
+            // Image is taller than container - fit height, scale width  
+            float newWidth = containerHeight * textureAspectRatio;
+            rectTransform.sizeDelta = new Vector2(newWidth, containerHeight);
         }
+
+        // if (textureAspectRatio > containerAspectRatio)
+        // {
+        //     float scale = containerAspectRatio / textureAspectRatio;
+        //     float yOffset = (1f - scale) * 0.5f;
+        //     rawImage.uvRect = new Rect(0, yOffset, 1, scale);
+        // }
+        // else
+        // {
+        //     float scale = textureAspectRatio / containerAspectRatio;
+        //     float xOffset = (1f - scale) * 0.5f;
+        //     rawImage.uvRect = new Rect(xOffset, 0, scale, 1);
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
