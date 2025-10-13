@@ -1,12 +1,12 @@
 # XR AI Workbench
 
-A Unity-based XR AI workbench built on Unity 6000.0.34f1.
+A Unity-based XR AI workbench built on Unity 6.2 (6000.2.0f1).
 
 ## Setup Instructions
 
 ### 1. Scene Setup
-- Open the **XrScene** in Unity
-- Locate the **XrAiModelManager** in the scene
+- Open the **UIScene** in Unity
+- Locate the **XrAiModelManager** in the Assets/Resources folder
 
 ### 2. AI Provider Configuration
 - Register for all the AI providers and obtain API Keys
@@ -30,6 +30,6 @@ A Unity-based XR AI workbench built on Unity 6000.0.34f1.
 7. Save Scene
 
 ## Requirements
-- Unity 6000.0.34f1
+- Unity 6000.2.0f1
 - Valid API Keys for AI providers
 - YOLO11 model files (see installation instructions above)
