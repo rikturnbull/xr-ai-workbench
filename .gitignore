@@ -67,5 +67,6 @@ crashlytics-build.properties
 .utmp
 Assets/Resources/Yolo/yolo11n*
 Assets/Resources/XrAiApiKeys.txt*
+Assets/Resources/XrAiSecrets.txt*
 Assets/Samples/
 Recordings/

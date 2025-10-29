@@ -589,14 +589,14 @@
       "url": "https://package.openupm.com"
     },
     "com.xrai.accelerator": {
-      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git",
+      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git#properties",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.openai.unity": "8.8.1",
         "com.unity.ai.inference": "2.2.1"
       },
-      "hash": "7d1eaae37798f5860e709bcd746755b8f9cee211"
+      "hash": "cbe018c8861c3841527967cf105e063fb3099ed8"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
