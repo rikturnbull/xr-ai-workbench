@@ -25,7 +25,7 @@
     "com.unity.visualscripting": "1.9.8",
     "com.unity.xr.management": "4.5.2",
     "com.unity.xr.oculus": "4.5.2",
-    "com.xrai.accelerator": "https://github.com/rikturnbull/xr-ai-accelerator.git",
+    "com.xrai.accelerator": "https://github.com/rikturnbull/xr-ai-accelerator.git#properties",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
