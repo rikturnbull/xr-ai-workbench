@@ -27,12 +27,14 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
             float startTime = Time.time;
             while (Time.time - startTime < 30f)
             {
+                StartTimer();
                 _currentTask = loadedProvider.Execute(
                     GetFrame().GetTexture(),
                     options,
                     callback
                 ).WithCancellation(_cancellationTokenSource.Token);
                 yield return new WaitUntil(() => _currentTask.IsCompleted || _cancellationTokenSource.Token.IsCancellationRequested);
+                StopTimer();
             }
         }
         else

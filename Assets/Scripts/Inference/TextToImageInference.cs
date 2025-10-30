@@ -21,10 +21,9 @@ public class TextToImageInference : BaseAiInference<IXrAiTextToImage, Texture2D>
     protected override IEnumerator ExecuteProvider(IXrAiTextToImage loadedProvider, string provider, Dictionary<string, string> options, Action<XrAiResult<Texture2D>> callback)
     {
         if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
-
-        options["prompt"] = GetPromptText();
         
         _currentTask = loadedProvider.Execute(
+            GetPromptText(),
             options,
             callback
         ).WithCancellation(_cancellationTokenSource.Token);
