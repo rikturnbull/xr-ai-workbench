@@ -29,6 +29,7 @@ public class WorkflowBuilderMenu : MonoBehaviour
             Destroy(layoutGroup);
         }
         DestroyImmediate(layoutGroup);
+        _uiBackplaneCanvas.AddComponent<HorizontalLayoutGroup>();
 
         uiBackplane.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
     }

@@ -63,7 +63,7 @@ public class ToggleButton : MonoBehaviour
                 Debug.LogError("ButtonPanel not found! Please assign it manually in the ToggleButton component.");
             }
         }
-        
+
         // Create material instance to avoid affecting other buttons
         if (buttonRenderer != null)
         {
@@ -73,13 +73,16 @@ public class ToggleButton : MonoBehaviour
         }
 
         // Connect to the interaction events
-        if (eventWrapper != null && !_ignoreButtonPress)
+        if(!_ignoreButtonPress)
         {
-            eventWrapper.WhenSelect.AddListener(OnButtonPressed);
-        }
-        else
-        {
-            Debug.LogError("InteractableUnityEventWrapper not found on the ToggleButton!");
+            if(eventWrapper != null)
+            {
+                eventWrapper.WhenSelect.AddListener(OnButtonPressed);
+            }
+            else
+            {
+                Debug.LogError("InteractableUnityEventWrapper not found on the ToggleButton!");
+            }
         }
         
         // Set initial visual state

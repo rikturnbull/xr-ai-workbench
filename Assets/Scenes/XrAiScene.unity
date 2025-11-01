@@ -2142,10 +2142,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1080354926}
   _rawImage: {fileID: 0}
   _webCamTextureManager: {fileID: 2045330342}
-  _inputSource: 5
-  _autoProcessWithImageToText: 0
-  _resourceImagePath: Images/office
-  _enableDebugLogs: 1
+  _resourceImagePath: Images/room
 --- !u!4 &225981782
 Transform:
   m_ObjectHideFlags: 0

@@ -104,6 +104,16 @@ public abstract class BaseAiInference<T,S> : MonoBehaviour where T : class where
         OnInferenceResult(result);
     }
 
+    protected Texture2D GetTexture()
+    {
+        FrameBehaviour frame = GetFrame();
+        if(frame != null)
+        {
+            return frame.GetTexture();
+        }
+        return null;
+    }
+
     protected abstract void OnInferenceResult(XrAiResult<S> result);
 
     public void OnClick(string provider)

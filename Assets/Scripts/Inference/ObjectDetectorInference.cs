@@ -27,8 +27,15 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
             float startTime = Time.time;
             while (Time.time - startTime < 30f)
             {
+                Texture2D texture = GetTexture();
+                if (texture == null)
+                {
+                    callback(XrAiResult.Failure<XrAiBoundingBox[]>("No texture available for inference."));
+                    yield break;
+                }
+
                 _currentTask = loadedProvider.Execute(
-                    GetFrame().GetTexture(),
+                    texture,
                     options,
                     callback
                 ).WithCancellation(_cancellationTokenSource.Token);
@@ -37,8 +44,15 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
         }
         else
         {
+            Texture2D texture = GetTexture();
+            if (texture == null)
+            {
+                callback(XrAiResult.Failure<XrAiBoundingBox[]>("No texture available for inference."));
+                yield break;
+            }
+
             _currentTask = loadedProvider.Execute(
-                GetFrame().GetTexture(),
+                texture,
                 GetWorkflowOptions(provider),
                 callback
             ).WithCancellation(_cancellationTokenSource.Token);
