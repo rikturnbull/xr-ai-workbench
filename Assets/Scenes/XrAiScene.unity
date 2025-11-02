@@ -119,6 +119,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &8261691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8261692}
+  m_Layer: 0
+  m_Name: IXrAiTextToSpeech
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8261692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8261691}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 185530786}
+  - {fileID: 1303071126}
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &24924852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,7 +460,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1623,6 +1657,66 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &185530785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185530786}
+  - component: {fileID: 185530787}
+  m_Layer: 0
+  m_Name: OpenAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &185530786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185530785}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8261692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &185530787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185530785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: speed
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: 1.0
+    Description: The speed of the generated audio - a value from 0.25 to 4.0. 1.0
+      is the default
+    Value: 1.0
+  - Key: voice
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: alloy
+    Description: The voice to use for text-to-speech generation (e.g., 'alloy', 'echo',
+      'fable', 'onyx', 'nova', 'shimmer')
+    Value: alloy
+  _providerName: OpenAI
 --- !u!1 &188827120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,6 +2002,71 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &196155857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196155858}
+  - component: {fileID: 196155859}
+  m_Layer: 0
+  m_Name: StabilityAi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &196155858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196155857}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417536209}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196155859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196155857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: foregroundRatio
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 0.85
+    Description: 'Amount of padding around the object to be processed within the
+      frame: 0.1..1.0'
+    Value: 0.85
+  - Key: textureResolution
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 1024
+    Description: 'Texture resolution: 512, 1024, 2048'
+    Value: 1024
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://api.stability.ai/v2beta/3d/stable-fast-3d
+    Description: Stability AI API URL
+    Value: https://api.stability.ai/v2beta/3d/stable-fast-3d
+  _providerName: StabilityAi
 --- !u!1 &196607210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,41 +2165,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1207358724}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &206906386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 206906387}
-  m_Layer: 0
-  m_Name: IXrAiImageToText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &206906387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206906386}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2006000596}
-  - {fileID: 1191520345}
-  - {fileID: 571396855}
-  - {fileID: 600510102}
-  m_Father: {fileID: 496714228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &206963681
 GameObject:
@@ -2158,71 +2282,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1498139052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &237856895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 237856896}
-  - component: {fileID: 237856897}
-  m_Layer: 0
-  m_Name: Google
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &237856896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237856895}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1109280589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &237856897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237856895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: imageQuality
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 100
-    Description: JPEG quality (1-100, lower = smaller file)
-    Value: 100
-  - Key: maxImageDimension
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 512
-    Description: Maximum width or height for the image before encoding (e.g., 512,
-      1024, 1536)
-    Value: 512
-  - Key: url
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
-    Description: The URL for the Google API endpoint
-    Value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
-  _providerName: Google
 --- !u!1 &242302213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,37 +2395,6 @@ MonoBehaviour:
   allowAllOff: 1
   defaultSelectedButton: {fileID: 0}
   showDebugLogs: 1
---- !u!1 &261716946
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 261716947}
-  m_Layer: 0
-  m_Name: IXrAiTextToText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &261716947
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 261716946}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264133492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,7 +3031,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4212,6 +4241,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 757516741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &417536208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417536209}
+  m_Layer: 0
+  m_Name: IXrAiImageTo3d
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417536209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417536208}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 196155858}
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &422303736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,14 +4930,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1829798080}
-  - {fileID: 917600944}
-  - {fileID: 206906387}
-  - {fileID: 1109280589}
-  - {fileID: 665624703}
-  - {fileID: 959921923}
-  - {fileID: 1698797051}
-  - {fileID: 261716947}
+  - {fileID: 417536209}
+  - {fileID: 1170355451}
+  - {fileID: 1346920743}
+  - {fileID: 1660816956}
+  - {fileID: 1484572933}
+  - {fileID: 1072954550}
+  - {fileID: 8261692}
+  - {fileID: 1202877592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500544185
@@ -5002,64 +5063,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 884119566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &501189999
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 501190000}
-  - component: {fileID: 501190001}
-  m_Layer: 0
-  m_Name: Roboflow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &501190000
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501189999}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1109280589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &501190001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501189999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: url
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
-    Description: The URL for the Roboflow API endpoint
-    Value: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
-  - Key: modelId
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 
-    Description: The model id to use for object detection
-    Value: 
-  _providerName: Roboflow
 --- !u!1 &510132881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5123,6 +5126,64 @@ Transform:
   - {fileID: 315784269}
   m_Father: {fileID: 959254821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &518284362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 518284363}
+  - component: {fileID: 518284364}
+  m_Layer: 0
+  m_Name: Roboflow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &518284363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518284362}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1660816956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518284364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518284362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
+    Description: The URL for the Roboflow API endpoint
+    Value: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
+  - Key: modelId
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 
+    Description: The model id to use for object detection
+    Value: 
+  _providerName: Roboflow
 --- !u!114 &523801834 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3999781463870342294, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
@@ -5248,7 +5309,7 @@ Transform:
   - {fileID: 1689472811}
   m_Father: {fileID: 1513772327}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &542960603
+--- !u!1 &549306379
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5256,108 +5317,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 542960604}
-  - component: {fileID: 542960605}
+  - component: {fileID: 549306380}
+  - component: {fileID: 549306381}
   m_Layer: 0
-  m_Name: OpenAI
+  m_Name: Google
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &542960604
+--- !u!4 &549306380
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542960603}
+  m_GameObject: {fileID: 549306379}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 959921923}
+  m_Father: {fileID: 1346920743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542960605
+--- !u!114 &549306381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542960603}
+  m_GameObject: {fileID: 549306379}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
   _workflowInspectorOptions:
+  - Key: imageQuality
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 100
+    Description: JPEG quality (1-100, lower = smaller file)
+    Value: 100
+  - Key: maxImageDimension
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 512
+    Description: Maximum width or height for the image before encoding (e.g., 512,
+      1024, 1536)
+    Value: 512
   - Key: prompt
     Scope: 1
-    IsRequired: 1
-    DefaultValue: A cat wearing a VR headset
-    Description: The prompt to use for text-to-image conversion
-    Value: A cat wearing a VR headset
-  _providerName: OpenAI
---- !u!1 &547630086
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 547630087}
-  - component: {fileID: 547630088}
-  m_Layer: 0
-  m_Name: RoboflowLocal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &547630087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547630086}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1109280589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &547630088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547630086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
+    IsRequired: 0
+    DefaultValue: Describe the image
+    Description: The prompt to use for image-to-text conversion
+    Value: Describe the image
   - Key: url
     Scope: 1
     IsRequired: 0
-    DefaultValue: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
-    Description: The URL for the Roboflow API endpoint
-    Value: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
-  - Key: modelId
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 
-    Description: The model id to use for object detection
-    Value: 
-  _providerName: RoboflowLocal
+    DefaultValue: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+    Description: The URL for the Google API endpoint
+    Value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+  _providerName: Google
 --- !u!1 &550482518
 GameObject:
   m_ObjectHideFlags: 0
@@ -5427,6 +5449,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e48d93b64a9ae4f9fd5a728c8f51af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &552517050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 552517051}
+  - component: {fileID: 552517052}
+  m_Layer: 0
+  m_Name: Yolo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &552517051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552517050}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1660816956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552517052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552517050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions: []
+  _providerName: Yolo
 --- !u!1 &553558322
 GameObject:
   m_ObjectHideFlags: 0
@@ -5458,70 +5526,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1280296504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &557983083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 557983084}
-  - component: {fileID: 557983085}
-  m_Layer: 0
-  m_Name: BedrockTitan
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &557983084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557983083}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 959921923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &557983085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557983083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  - Key: model
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: amazon.titan-image-generator-v1
-    Description: The model to use for image-to-text conversion
-    Value: amazon.titan-image-generator-v1
-  - Key: prompt
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Describe the image
-    Description: The prompt to use for image-to-text conversion
-    Value: Describe the image
-  _providerName: BedrockTitan
 --- !u!1 &561359374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,113 +5558,6 @@ Transform:
   - {fileID: 1962155203}
   m_Father: {fileID: 1134900739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &571396854
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 571396855}
-  - component: {fileID: 571396856}
-  m_Layer: 0
-  m_Name: Nvidia
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &571396855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571396854}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 206906387}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &571396856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571396854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: frequencyPenalty
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 0.0
-    Description: Frequency penalty for the response
-    Value: 0.0
-  - Key: imageQuality
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 100
-    Description: JPEG quality (1-100, lower = smaller file)
-    Value: 100
-  - Key: maxImageDimension
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 512
-    Description: Maximum width or height for the image before encoding (e.g., 128,
-      256, 384)
-    Value: 512
-  - Key: maxTokens
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 512
-    Description: Maximum number of tokens in the response
-    Value: 512
-  - Key: model
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: meta/llama-3.2-90b-vision-instruct
-    Description: The model to use for image-to-text conversion
-    Value: meta/llama-3.2-90b-vision-instruct
-  - Key: presencePenalty
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 0.0
-    Description: Presence penalty for the response
-    Value: 0.0
-  - Key: prompt
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Describe the image
-    Description: The prompt to use for image-to-text conversion
-    Value: Describe the image
-  - Key: temperature
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 1.0
-    Description: Sampling temperature for the response
-    Value: 1.0
-  - Key: topP
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 1.0
-    Description: Top-p sampling value for the response
-    Value: 1.0
-  - Key: url
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: https://integrate.api.nvidia.com/v1/chat/completions
-    Description: The URL for the NVIDIA API endpoint
-    Value: https://integrate.api.nvidia.com/v1/chat/completions
-  _providerName: Nvidia
 --- !u!1 &582593869
 GameObject:
   m_ObjectHideFlags: 0
@@ -5919,70 +5816,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.6778891, y: -3.017043, z: -1.9610169}
     m_Extent: {x: 3.368389, y: 4.314377, z: 5.282364}
   m_DirtyAABB: 0
---- !u!1 &600510101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600510102}
-  - component: {fileID: 600510103}
-  m_Layer: 0
-  m_Name: BedrockAnthropic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &600510102
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600510101}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 206906387}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &600510103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600510101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  - Key: model
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: anthropic.claude-3-haiku-20240307-v1:0
-    Description: The model to use for image-to-text conversion
-    Value: anthropic.claude-3-haiku-20240307-v1:0
-  - Key: prompt
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Describe the image
-    Description: The prompt to use for image-to-text conversion
-    Value: Describe the image
-  _providerName: BedrockAnthropic
 --- !u!1 &613051886
 GameObject:
   m_ObjectHideFlags: 0
@@ -6460,91 +6293,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &665624702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665624703}
-  m_Layer: 0
-  m_Name: IXrAiSpeechToText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &665624703
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665624702}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1625922956}
-  - {fileID: 1345360796}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &669205670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 669205671}
-  - component: {fileID: 669205672}
-  m_Layer: 0
-  m_Name: Rekognition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &669205671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669205670}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1109280589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &669205672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669205670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  _providerName: Rekognition
 --- !u!1 &673608126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,71 +6324,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1800698982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &678767965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 678767966}
-  - component: {fileID: 678767967}
-  m_Layer: 0
-  m_Name: Polly
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &678767966
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678767965}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698797051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &678767967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678767965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  - Key: voiceId
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Joanna
-    Description: 'Voice ID to use. US English: Joanna, Matthew, Ivy, Kendra, Joey,
-      Justin; UK English: Amy, Emma, Brian, Arthur'
-    Value: Joanna
-  - Key: engine
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: neural
-    Description: 'Speech engine. Options: standard, neural'
-    Value: neural
-  _providerName: Polly
 --- !u!1 &704954034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7053,66 +6736,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 211581921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &811938528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 811938529}
-  - component: {fileID: 811938530}
-  m_Layer: 0
-  m_Name: OpenAI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &811938529
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811938528}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1698797051}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &811938530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811938528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: speed
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: 1.0
-    Description: The speed of the generated audio - a value from 0.25 to 4.0. 1.0
-      is the default
-    Value: 1.0
-  - Key: voice
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: alloy
-    Description: The voice to use for text-to-speech generation (e.g., 'alloy', 'echo',
-      'fable', 'onyx', 'nova', 'shimmer')
-    Value: alloy
-  _providerName: OpenAI
 --- !u!1 &821216676
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,6 +6994,136 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1088000212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &847604412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847604413}
+  - component: {fileID: 847604414}
+  m_Layer: 0
+  m_Name: RoboflowLocal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847604413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847604412}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1660816956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847604414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847604412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
+    Description: The URL for the Roboflow API endpoint
+    Value: https://serverless.roboflow.com/infer/workflows/xr-shu81/yolov11-object-detection
+  - Key: modelId
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 
+    Description: The model id to use for object detection
+    Value: 
+  _providerName: RoboflowLocal
+--- !u!1 &849383346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849383347}
+  - component: {fileID: 849383348}
+  m_Layer: 0
+  m_Name: Groq
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849383347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849383346}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1346920743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849383348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849383346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: imageQuality
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 100
+    Description: JPEG quality (1-100, lower = smaller file)
+    Value: 100
+  - Key: model
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: meta-llama/llama-4-scout-17b-16e-instruct
+    Description: 'The vision model to use: meta-llama/llama-4-scout-17b-16e-instruct
+      or meta-llama/llama-4-maverick-17b-128e-instruct'
+    Value: meta-llama/llama-4-scout-17b-16e-instruct
+  - Key: prompt
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: Describe the image
+    Description: The prompt to use for image analysis
+    Value: Describe the image
+  - Key: maxImageDimension
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 512
+    Description: Maximum width or height for the image before encoding (e.g., 512,
+      1024, 1536)
+    Value: 512
+  _providerName: Groq
 --- !u!1 &857597144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7891,38 +7644,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1958571765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &917600943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 917600944}
-  m_Layer: 0
-  m_Name: IXrAiImageToImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &917600944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917600943}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1486409229}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920184757
 GameObject:
   m_ObjectHideFlags: 0
@@ -8226,6 +7947,71 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 0
   _handGrabPoses: []
+--- !u!1 &933783065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933783066}
+  - component: {fileID: 933783067}
+  m_Layer: 0
+  m_Name: Google
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933783066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933783065}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1660816956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933783067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933783065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: imageQuality
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 100
+    Description: JPEG quality (1-100, lower = smaller file)
+    Value: 100
+  - Key: maxImageDimension
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 512
+    Description: Maximum width or height for the image before encoding (e.g., 512,
+      1024, 1536)
+    Value: 512
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+    Description: The URL for the Google API endpoint
+    Value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+  _providerName: Google
 --- !u!1 &934790298
 GameObject:
   m_ObjectHideFlags: 0
@@ -8474,39 +8260,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &959921922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 959921923}
-  m_Layer: 0
-  m_Name: IXrAiTextToImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &959921923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959921922}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 542960604}
-  - {fileID: 557983084}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &961810184
 GameObject:
   m_ObjectHideFlags: 0
@@ -9316,7 +9069,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9762,6 +9516,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 961810185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1072954549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072954550}
+  m_Layer: 0
+  m_Name: IXrAiTextToImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1072954550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072954549}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1129109133}
+  - {fileID: 1421658736}
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080354925
 GameObject:
   m_ObjectHideFlags: 0
@@ -10199,43 +9986,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1193674664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1109280588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1109280589}
-  m_Layer: 0
-  m_Name: IXrAiObjectDetector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1109280589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109280588}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 237856896}
-  - {fileID: 547630087}
-  - {fileID: 501190000}
-  - {fileID: 1597139368}
-  - {fileID: 1931196299}
-  - {fileID: 669205671}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113739960
 GameObject:
   m_ObjectHideFlags: 0
@@ -10659,7 +10409,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10757,6 +10508,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1800698982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1129109132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1129109133}
+  - component: {fileID: 1129109134}
+  m_Layer: 0
+  m_Name: OpenAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1129109133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129109132}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1072954550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1129109134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129109132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: prompt
+    Scope: 1
+    IsRequired: 1
+    DefaultValue: A cat wearing a VR headset
+    Description: The prompt to use for text-to-image conversion
+    Value: A cat wearing a VR headset
+  _providerName: OpenAI
 --- !u!1 &1134900738
 GameObject:
   m_ObjectHideFlags: 0
@@ -11113,6 +10916,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1545655467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1170355450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1170355451}
+  m_Layer: 0
+  m_Name: IXrAiImageToImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1170355451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170355450}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1940514851}
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175747136
 GameObject:
   m_ObjectHideFlags: 0
@@ -11144,6 +10979,113 @@ Transform:
   m_Children: []
   m_Father: {fileID: 315784269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1179427276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179427277}
+  - component: {fileID: 1179427278}
+  m_Layer: 0
+  m_Name: Nvidia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1179427277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179427276}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1346920743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179427278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179427276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: frequencyPenalty
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 0.0
+    Description: Frequency penalty for the response
+    Value: 0.0
+  - Key: imageQuality
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 100
+    Description: JPEG quality (1-100, lower = smaller file)
+    Value: 100
+  - Key: maxImageDimension
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 512
+    Description: Maximum width or height for the image before encoding (e.g., 128,
+      256, 384)
+    Value: 512
+  - Key: maxTokens
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 512
+    Description: Maximum number of tokens in the response
+    Value: 512
+  - Key: model
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: meta/llama-3.2-90b-vision-instruct
+    Description: The model to use for image-to-text conversion
+    Value: meta/llama-3.2-90b-vision-instruct
+  - Key: presencePenalty
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 0.0
+    Description: Presence penalty for the response
+    Value: 0.0
+  - Key: prompt
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: Describe the image
+    Description: The prompt to use for image-to-text conversion
+    Value: Describe the image
+  - Key: temperature
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 1.0
+    Description: Sampling temperature for the response
+    Value: 1.0
+  - Key: topP
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 1.0
+    Description: Top-p sampling value for the response
+    Value: 1.0
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://integrate.api.nvidia.com/v1/chat/completions
+    Description: The URL for the NVIDIA API endpoint
+    Value: https://integrate.api.nvidia.com/v1/chat/completions
+  _providerName: Nvidia
 --- !u!1 &1185601302
 GameObject:
   m_ObjectHideFlags: 0
@@ -11233,78 +11175,6 @@ Transform:
   - {fileID: 394028302}
   m_Father: {fileID: 38393729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1191520344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1191520345}
-  - component: {fileID: 1191520346}
-  m_Layer: 0
-  m_Name: Groq
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1191520345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191520344}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 206906387}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1191520346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191520344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: imageQuality
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 100
-    Description: JPEG quality (1-100, lower = smaller file)
-    Value: 100
-  - Key: model
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: meta-llama/llama-4-scout-17b-16e-instruct
-    Description: 'The vision model to use: meta-llama/llama-4-scout-17b-16e-instruct
-      or meta-llama/llama-4-maverick-17b-128e-instruct'
-    Value: meta-llama/llama-4-scout-17b-16e-instruct
-  - Key: prompt
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Describe the image
-    Description: The prompt to use for image analysis
-    Value: Describe the image
-  - Key: maxImageDimension
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 512
-    Description: Maximum width or height for the image before encoding (e.g., 512,
-      1024, 1536)
-    Value: 512
-  _providerName: Groq
 --- !u!1 &1193674663
 GameObject:
   m_ObjectHideFlags: 0
@@ -11435,6 +11305,37 @@ SkinnedMeshRenderer:
     m_Center: {x: 3.5085697, y: 0.084750324, z: -0.17565808}
     m_Extent: {x: 0.10651207, y: 0.1877416, z: 0.45612457}
   m_DirtyAABB: 0
+--- !u!1 &1202877591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1202877592}
+  m_Layer: 0
+  m_Name: IXrAiTextToText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1202877592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202877591}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207214326
 GameObject:
   m_ObjectHideFlags: 0
@@ -11505,71 +11406,6 @@ Transform:
   - {fileID: 189015919}
   m_Father: {fileID: 190807078}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1212176401
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1212176402}
-  - component: {fileID: 1212176403}
-  m_Layer: 0
-  m_Name: StabilityAi
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1212176402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212176401}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1829798080}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1212176403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212176401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: foregroundRatio
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 0.85
-    Description: 'Amount of padding around the object to be processed within the
-      frame: 0.1..1.0'
-    Value: 0.85
-  - Key: textureResolution
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 1024
-    Description: 'Texture resolution: 512, 1024, 2048'
-    Value: 1024
-  - Key: url
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: https://api.stability.ai/v2beta/3d/stable-fast-3d
-    Description: Stability AI API URL
-    Value: https://api.stability.ai/v2beta/3d/stable-fast-3d
-  _providerName: StabilityAi
 --- !u!1 &1213004515
 GameObject:
   m_ObjectHideFlags: 0
@@ -12280,6 +12116,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1526644804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1303071125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303071126}
+  - component: {fileID: 1303071127}
+  m_Layer: 0
+  m_Name: Polly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303071126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303071125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8261692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1303071127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303071125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: region
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  - Key: voiceId
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: Joanna
+    Description: 'Voice ID to use. US English: Joanna, Matthew, Ivy, Kendra, Joey,
+      Justin; UK English: Amy, Emma, Brian, Arthur'
+    Value: Joanna
+  - Key: engine
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: neural
+    Description: 'Speech engine. Options: standard, neural'
+    Value: neural
+  _providerName: Polly
 --- !u!1 &1305995116
 GameObject:
   m_ObjectHideFlags: 0
@@ -12515,6 +12416,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ee41d9b5b3d694ab6d7ff30bffe0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextToImageInference
+--- !u!1 &1341971640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341971641}
+  - component: {fileID: 1341971642}
+  m_Layer: 0
+  m_Name: Transcribe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1341971641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341971640}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1484572933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341971642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341971640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: region
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  - Key: languageCode
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: en-US
+    Description: 'Language code (default: en-US)'
+    Value: en-US
+  - Key: sampleRate
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: 16000
+    Description: 'Sample rate (default: 16000)'
+    Value: 16000
+  - Key: mediaEncoding
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: pcm
+    Description: 'Media encoding (default: pcm)'
+    Value: pcm
+  _providerName: Transcribe
 --- !u!1 &1344047917
 GameObject:
   m_ObjectHideFlags: 0
@@ -12552,76 +12523,6 @@ Transform:
   - {fileID: 2066209448}
   m_Father: {fileID: 381563451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1345360795
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1345360796}
-  - component: {fileID: 1345360797}
-  m_Layer: 0
-  m_Name: Transcribe
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1345360796
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345360795}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 665624703}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1345360797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345360795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  - Key: languageCode
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: en-US
-    Description: 'Language code (default: en-US)'
-    Value: en-US
-  - Key: sampleRate
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 16000
-    Description: 'Sample rate (default: 16000)'
-    Value: 16000
-  - Key: mediaEncoding
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: pcm
-    Description: 'Media encoding (default: pcm)'
-    Value: pcm
-  _providerName: Transcribe
 --- !u!1 &1346120782
 GameObject:
   m_ObjectHideFlags: 0
@@ -12714,6 +12615,41 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.008976316, y: -0.064772196, z: -0.067473285}
     m_Extent: {x: 0.0043462086, y: 0.006806761, z: 0.0068782493}
   m_DirtyAABB: 0
+--- !u!1 &1346920742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346920743}
+  m_Layer: 0
+  m_Name: IXrAiImageToText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346920743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346920742}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 549306380}
+  - {fileID: 849383347}
+  - {fileID: 1179427277}
+  - {fileID: 1594224667}
+  m_Father: {fileID: 496714228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352688057
 GameObject:
   m_ObjectHideFlags: 0
@@ -12975,6 +12911,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1884255064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1375373895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375373896}
+  - component: {fileID: 1375373897}
+  m_Layer: 0
+  m_Name: RekognitionKeypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375373896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375373895}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1660816956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375373897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375373895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: region
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  _providerName: RekognitionKeypoints
 --- !u!1 &1379222122
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,6 +13211,70 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.016699273, y: -0.03636414, z: -0.018954389}
     m_Extent: {x: 0.05463389, y: 0.050220694, z: 0.051451057}
   m_DirtyAABB: 0
+--- !u!1 &1421658735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421658736}
+  - component: {fileID: 1421658737}
+  m_Layer: 0
+  m_Name: BedrockTitan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1421658736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421658735}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1072954550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421658737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421658735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: region
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  - Key: model
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: amazon.titan-image-generator-v1
+    Description: The model to use for image-to-text conversion
+    Value: amazon.titan-image-generator-v1
+  - Key: prompt
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: Describe the image
+    Description: The prompt to use for image-to-text conversion
+    Value: Describe the image
+  _providerName: BedrockTitan
 --- !u!1 &1427129122
 GameObject:
   m_ObjectHideFlags: 0
@@ -14051,7 +14103,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14482,7 +14535,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -3.5085695, y: 0.08475034, z: -0.17565808}
     m_Extent: {x: 0.10651159, y: 0.18774159, z: 0.45612463}
   m_DirtyAABB: 0
---- !u!1 &1486409228
+--- !u!1 &1484572932
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14490,44 +14543,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1486409229}
-  - component: {fileID: 1486409230}
+  - component: {fileID: 1484572933}
   m_Layer: 0
-  m_Name: OpenAI
+  m_Name: IXrAiSpeechToText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1486409229
+--- !u!4 &1484572933
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486409228}
+  m_GameObject: {fileID: 1484572932}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 917600944}
+  m_Children:
+  - {fileID: 2099349659}
+  - {fileID: 1341971641}
+  m_Father: {fileID: 496714228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1486409230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486409228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions: []
-  _providerName: OpenAI
 --- !u!1 &1490371686
 GameObject:
   m_ObjectHideFlags: 0
@@ -15230,7 +15270,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5166796752863741023, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15553,7 +15594,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1344047918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1597139367
+--- !u!1 &1594224666
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15561,44 +15602,62 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1597139368}
-  - component: {fileID: 1597139369}
+  - component: {fileID: 1594224667}
+  - component: {fileID: 1594224668}
   m_Layer: 0
-  m_Name: Yolo
+  m_Name: BedrockAnthropic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1597139368
+--- !u!4 &1594224667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597139367}
+  m_GameObject: {fileID: 1594224666}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1109280589}
+  m_Father: {fileID: 1346920743}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1597139369
+--- !u!114 &1594224668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597139367}
+  m_GameObject: {fileID: 1594224666}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions: []
-  _providerName: Yolo
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: region
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  - Key: model
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: anthropic.claude-3-haiku-20240307-v1:0
+    Description: The model to use for image-to-text conversion
+    Value: anthropic.claude-3-haiku-20240307-v1:0
+  - Key: prompt
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: Describe the image
+    Description: The prompt to use for image-to-text conversion
+    Value: Describe the image
+  _providerName: BedrockAnthropic
 --- !u!1 &1598666891
 GameObject:
   m_ObjectHideFlags: 0
@@ -15969,76 +16028,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.009029879, y: -0.064930744, z: -0.06743039}
     m_Extent: {x: 0.0043483684, y: 0.0068749115, z: 0.006839171}
   m_DirtyAABB: 0
---- !u!1 &1625922955
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625922956}
-  - component: {fileID: 1625922957}
-  m_Layer: 0
-  m_Name: OpenAI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1625922956
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625922955}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 665624703}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1625922957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625922955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: language
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: en
-    Description: The language of the audio (e.g., 'en' for English)
-    Value: en
-  - Key: model
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: whisper-1
-    Description: The model to use for speech-to-text conversion
-    Value: whisper-1
-  - Key: prompt
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: 
-    Description: An optional text prompt to guide the transcription
-    Value: 
-  - Key: temperature
-    Scope: 0
-    IsRequired: 0
-    DefaultValue: 0.0
-    Description: Temperature for the API request
-    Value: 0.0
-  _providerName: OpenAI
 --- !u!114 &1626601663 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5360393495018210107, guid: 94b445ae9e70a1942be035f12106cf3e, type: 3}
@@ -16150,6 +16139,43 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1800698982}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1660816955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660816956}
+  m_Layer: 0
+  m_Name: IXrAiObjectDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660816956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660816955}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 933783066}
+  - {fileID: 847604413}
+  - {fileID: 518284363}
+  - {fileID: 552517051}
+  - {fileID: 1375373896}
+  - {fileID: 2018152683}
+  m_Father: {fileID: 496714228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1667532677
 GameObject:
@@ -16551,39 +16577,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.016699273, y: -0.03636414, z: -0.018954389}
     m_Extent: {x: 0.05463389, y: 0.050220694, z: 0.051451057}
   m_DirtyAABB: 0
---- !u!1 &1698797050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1698797051}
-  m_Layer: 0
-  m_Name: IXrAiTextToSpeech
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1698797051
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698797050}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 811938529}
-  - {fileID: 678767966}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719139556
 GameObject:
   m_ObjectHideFlags: 0
@@ -17236,38 +17229,6 @@ MonoBehaviour:
   installationRoutineCheckpoint:
     _installationRoutineId: 
     _installationVariants: []
---- !u!1 &1829798079
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1829798080}
-  m_Layer: 0
-  m_Name: IXrAiImageTo3d
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1829798080
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829798079}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.91311, y: -1.01867, z: -0.11281}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1212176402}
-  m_Father: {fileID: 496714228}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839803935
 GameObject:
   m_ObjectHideFlags: 0
@@ -17923,58 +17884,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 211581921}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1931196298
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1931196299}
-  - component: {fileID: 1931196300}
-  m_Layer: 0
-  m_Name: RekognitionKeypoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1931196299
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931196298}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1109280589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1931196300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931196298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
-  _workflowInspectorOptions:
-  - Key: region
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: eu-west-1
-    Description: The AWS region to use for the request
-    Value: eu-west-1
-  _providerName: RekognitionKeypoints
 --- !u!1 &1931597964
 GameObject:
   m_ObjectHideFlags: 0
@@ -18078,6 +17987,52 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1940514850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940514851}
+  - component: {fileID: 1940514852}
+  m_Layer: 0
+  m_Name: OpenAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1940514851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940514850}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1170355451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1940514852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940514850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions: []
+  _providerName: OpenAI
 --- !u!1 &1941861613
 GameObject:
   m_ObjectHideFlags: 0
@@ -18735,7 +18690,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1088000212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2006000595
+--- !u!1 &2018152682
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18743,69 +18698,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2006000596}
-  - component: {fileID: 2006000597}
+  - component: {fileID: 2018152683}
+  - component: {fileID: 2018152684}
   m_Layer: 0
-  m_Name: Google
+  m_Name: Rekognition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2006000596
+--- !u!4 &2018152683
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006000595}
+  m_GameObject: {fileID: 2018152682}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 206906387}
+  m_Father: {fileID: 1660816956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2006000597
+--- !u!114 &2018152684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006000595}
+  m_GameObject: {fileID: 2018152682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
   _workflowInspectorOptions:
-  - Key: imageQuality
+  - Key: region
     Scope: 1
     IsRequired: 0
-    DefaultValue: 100
-    Description: JPEG quality (1-100, lower = smaller file)
-    Value: 100
-  - Key: maxImageDimension
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: 512
-    Description: Maximum width or height for the image before encoding (e.g., 512,
-      1024, 1536)
-    Value: 512
-  - Key: prompt
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: Describe the image
-    Description: The prompt to use for image-to-text conversion
-    Value: Describe the image
-  - Key: url
-    Scope: 1
-    IsRequired: 0
-    DefaultValue: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
-    Description: The URL for the Google API endpoint
-    Value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
-  _providerName: Google
+    DefaultValue: eu-west-1
+    Description: The AWS region to use for the request
+    Value: eu-west-1
+  _providerName: Rekognition
 --- !u!1 &2026342954
 GameObject:
   m_ObjectHideFlags: 0
@@ -19439,6 +19375,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2033556543}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2099349658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099349659}
+  - component: {fileID: 2099349660}
+  m_Layer: 0
+  m_Name: OpenAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2099349659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099349658}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1484572933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2099349660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099349658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: language
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: en
+    Description: The language of the audio (e.g., 'en' for English)
+    Value: en
+  - Key: model
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: whisper-1
+    Description: The model to use for speech-to-text conversion
+    Value: whisper-1
+  - Key: prompt
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: 
+    Description: An optional text prompt to guide the transcription
+    Value: 
+  - Key: temperature
+    Scope: 0
+    IsRequired: 0
+    DefaultValue: 0.0
+    Description: Temperature for the API request
+    Value: 0.0
+  _providerName: OpenAI
 --- !u!1 &2106098378
 GameObject:
   m_ObjectHideFlags: 0
