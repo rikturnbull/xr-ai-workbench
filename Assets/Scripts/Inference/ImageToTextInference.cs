@@ -22,8 +22,15 @@ public class ImageToTextInference : BaseAiInference<IXrAiImageToText, string>
     {
         if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
 
+        Texture2D texture = GetTexture();
+        if (texture == null)
+        {
+            callback(XrAiResult.Failure<string>("No texture available for inference."));
+            yield break;
+        }
+
         _currentTask = loadedProvider.Execute(
-            GetFrame().GetTexture(),
+            texture,
             options,
             callback
         ).WithCancellation(_cancellationTokenSource.Token);

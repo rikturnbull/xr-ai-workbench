@@ -11,9 +11,10 @@ public class ScreenShotBehaviour : MonoBehaviour
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private RawImage _rawImage;
     [SerializeField] private WebCamTextureManager _webCamTextureManager;    
-    [SerializeField] private string _resourceImagePath = "SampleImages/test-image";
+    [SerializeField] private string _resourceImagePath = "Images/room";
 
     private bool _loadVideo = true;
+    private int _screenshotStep = 0;
 
     public System.Action<Texture2D> OnScreenshotCaptured;
     
@@ -31,26 +32,35 @@ public class ScreenShotBehaviour : MonoBehaviour
     }
     
     private IEnumerator CaptureScreenshotCoroutine()
-    {    
-        if (_webCamTextureManager == null || _webCamTextureManager.WebCamTexture == null)
+    {
+        if (_screenshotStep == 0)
         {
-            if (_loadVideo)
-                LoadVideo();
-            else
-                LoadResourceImage();
-            _loadVideo = !_loadVideo;
+            LoadResourceImage();
+            _screenshotStep = 1;
+            yield break;
         }
-        else
+        else if (_screenshotStep == 1)
         {
-            yield return _waitForSeconds1;
-            if (_loadVideo)
-                LoadVideo();
-            else
-                LoadResourceImage();
-            _loadVideo = !_loadVideo;
-            // LoadWebCamTexture();
+            LoadVideo();
+            _screenshotStep = 2;
+            yield break;
         }
-
+        else if (_screenshotStep == 2)
+        {
+            if (_webCamTextureManager != null && _webCamTextureManager.WebCamTexture != null && _webCamTextureManager.WebCamTexture.isPlaying)
+            {
+                yield return _waitForSeconds1;
+                LoadWebCamTexture();
+                _screenshotStep = 0;
+                yield break;
+            }
+            else
+            {
+                _screenshotStep = 1;
+                LoadResourceImage();
+                yield break;
+            }
+        }
     }
 
     public void LoadWebCamTexture()

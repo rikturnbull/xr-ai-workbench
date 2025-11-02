@@ -25,9 +25,15 @@ public class ImageTo3dInference : BaseAiInference<IXrAiImageTo3d, byte[]>
     {
         if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
 
-        Texture2D inputTexture = GetFrame().GetTexture();
+        Texture2D texture = GetTexture();
+        if (texture == null)
+        {
+            callback(XrAiResult.Failure<byte[]>("No texture available for inference."));
+            yield break;
+        }
+
         _currentTask = loadedProvider.Execute(
-            GetFrame().GetTexture(),
+            texture,
             options,
             callback
         ).WithCancellation(_cancellationTokenSource.Token);

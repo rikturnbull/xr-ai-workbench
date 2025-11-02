@@ -1,5 +1,4 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
-  <Project Path="uk.co.controlz.xrai.aws.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
