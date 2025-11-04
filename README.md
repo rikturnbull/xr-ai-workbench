@@ -1,6 +1,6 @@
 # XR AI Workbench
 
-A Unity-based XR AI workbench built on Unity 6.2 (6000.2.0f1).
+A Unity-based XR AI workbench built on Unity 6.2 (6000.2.10f1).
 
 ![Screenshot](screenshot.png)
 
@@ -16,7 +16,7 @@ A Unity-based XR AI workbench built on Unity 6.2 (6000.2.0f1).
 Use `XrAiSecretsManager` to store secrets:
 
 1. Navigate to your `Assets/Resources` folder.
-2. Right-click `Create -> XrAiAccelerator -> Secrets Manager`.
+2. If `XrAiSecretsManager` does not exist, right-click `Create -> XrAiAccelerator -> Secrets Manager`.
 3. Click on the `XrAiSecretsManager` object and view the inspector.
 
 **Add** a secret: enter the secret and click `Add`.
@@ -31,7 +31,7 @@ Use `XrAiSecretsManager` to store secrets:
 - Enter the API Keys into the **XrAiSecretsManager**
 - Save the Scene
 
-For the built-in and AWS plugins use the following names for your API Keys in XrAiSecretsManager:
+For the built-in plugins use the following names for your API Keys in XrAiSecretsManager:
 
 - "Nvidia" - https://build.nvidia.com/settings/api-keys
 - "OpenAI" - https://platform.openai.com/account/api-keys
@@ -41,6 +41,7 @@ For the built-in and AWS plugins use the following names for your API Keys in Xr
 - "StabilityAi" - https://platform.stability.ai/account/api-keys
 
 For AWS - you need an ACCESS_KEY and SECRET_KEY - the value of the secret is <ACCESS_KEY>;<SECRET_KEY> - separated with ';'.
+Use these names:
 
 - "BedrockAnthropic"
 - "BedrockTitan"
@@ -49,5 +50,5 @@ For AWS - you need an ACCESS_KEY and SECRET_KEY - the value of the secret is <AC
 - "Transcribe"
 
 ## Requirements
-- Unity 6000.2.0f1
+- Unity 6000.2.10f1
 - Valid API Keys for AI providers

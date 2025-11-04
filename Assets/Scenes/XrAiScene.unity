@@ -2266,7 +2266,7 @@ MonoBehaviour:
   _spawnPosition: {fileID: 1080354926}
   _rawImage: {fileID: 0}
   _webCamTextureManager: {fileID: 2045330342}
-  _resourceImagePath: Images/office
+  _resourceImagePath: Images/room
 --- !u!4 &225981782
 Transform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2358,6 @@ GameObject:
   - component: {fileID: 236850720}
   - component: {fileID: 236850719}
   - component: {fileID: 236850718}
-  - component: {fileID: 236850717}
   m_Layer: 5
   m_Name: LiveButton
   m_TagString: Untagged
@@ -2386,19 +2385,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.504, y: -0.067}
   m_SizeDelta: {x: 0.05, y: 0.05}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &236850717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236850715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca4f63bf1082f14bbf5556c4b895ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PropertiesButtonBehaviour
-  _handle: {fileID: 724795104}
 --- !u!82 &236850718
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6167,6 +6153,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 542676600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &615979798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 615979799}
+  - component: {fileID: 615979800}
+  m_Layer: 0
+  m_Name: Google
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &615979799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615979798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1072954550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &615979800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615979798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa6ea9f84cd7cc48be8777c76adfb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: uk.co.controlz.xrai.accelerator::XrAiAccelerator.XrAiWorkflowInspectorPanel
+  _workflowInspectorOptions:
+  - Key: url
+    Scope: 1
+    IsRequired: 0
+    DefaultValue: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent
+    Description: The URL for the Google API endpoint
+    Value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent
+  _providerName: Google
 --- !u!1 &624762369
 GameObject:
   m_ObjectHideFlags: 0
@@ -9939,6 +9977,7 @@ Transform:
   m_Children:
   - {fileID: 1129109133}
   - {fileID: 1421658736}
+  - {fileID: 615979799}
   m_Father: {fileID: 496714228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080354925
@@ -15809,7 +15848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoscopic: 0
   _sharpenType: 0
-  _enableDynamicResolution: 0
+  _enableDynamicResolution: 1
   minDynamicResolutionScale: 1
   maxDynamicResolutionScale: 1
   quest2MinDynamicResolutionScale: 0.7

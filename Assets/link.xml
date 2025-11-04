@@ -1,0 +1,8 @@
+<linker>
+  <!-- Preserve entire assemblies -->
+  <assembly fullname="uk.co.controlz.xrai.accelerator" preserve="all"/>
+  <assembly fullname="uk.co.controlz.xrai.aws" preserve="all"/>
+  
+  <!-- Preserve specific types that use reflection -->
+  <type fullname="XrAiAccelerator.XrAiFactory" preserve="all"/>
+</linker>

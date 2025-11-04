@@ -85,19 +85,6 @@ public class ScreenShotBehaviour : MonoBehaviour
 
         RenderTexture.ReleaseTemporary(tempRT);
 
-        Color32[] pixels = screenshot.GetPixels32();
-        float brightnessFactor = 1.3f; // Adjust this value to control brightness
-
-        for (int i = 0; i < pixels.Length; i++)
-        {
-            pixels[i].r = (byte)Mathf.Clamp01(pixels[i].r * brightnessFactor);
-            pixels[i].g = (byte)Mathf.Clamp01(pixels[i].g * brightnessFactor);
-            pixels[i].b = (byte)Mathf.Clamp01(pixels[i].b * brightnessFactor);
-        }
-
-        screenshot.SetPixels32(pixels);
-        screenshot.Apply();
-
         FrameBehaviour.CreateFrameBehaviourFromPrefab(screenshot, new Pose(
                 _spawnPosition.position,
                 Quaternion.LookRotation(-_spawnPosition.forward, Vector3.up)

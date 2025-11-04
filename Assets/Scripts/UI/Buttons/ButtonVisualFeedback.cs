@@ -68,9 +68,7 @@ public class ButtonVisualFeedback : MonoBehaviour
     
     void OnUnselect()
     {
-        Debug.Log("OnUnselect called");
-        SetVisualState(ButtonState.Hover); // Return to hover if still hovering
-        // SetVisualState(ButtonState.Normal); // Return to normal on unselect
+        SetVisualState(ButtonState.Hover);
         StartCoroutine(ScaleAnimation(normalScale));
     }
     
