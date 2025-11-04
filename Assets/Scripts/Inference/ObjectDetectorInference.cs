@@ -22,7 +22,13 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
     {
         if (_cancellationTokenSource.Token.IsCancellationRequested) yield break;
 
-        if (GetFrame().GetIsVideo())
+        FrameBehaviour frame = GetFrame();
+        if (frame == null)
+        {
+            callback(XrAiResult.Failure<XrAiBoundingBox[]>("Input image frame is not set."));
+            yield break;
+        }
+        if (frame.GetIsVideo())
         {
             float startTime = Time.time;
             while (Time.time - startTime < 30f)
