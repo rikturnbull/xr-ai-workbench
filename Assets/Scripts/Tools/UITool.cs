@@ -83,13 +83,10 @@ public class UITool
                 Debug.LogWarning("UITool: RunProvider called with invalid arguments.");
                 return;
             }
-            Debug.Log($"UITool: Running provider '{args.ProviderName}'");
             foreach(var menuController in _menuControllers)
             {
-                Debug.Log($"UITool: Available MenuController '{menuController.Key}'");
                 if(menuController.Value.IsMenuOpen())
                 {
-                    Debug.Log($"UITool: MenuController '{menuController.Key}' is open.");
                     menuController.Value.ClickProvider(args.ProviderName);
                 }
             }
@@ -113,10 +110,8 @@ public class UITool
                 Debug.LogWarning("UITool: OpenWorkflowMenu called with invalid arguments.");
                 return;
             }
-            Debug.Log($"UITool: Opening workflow menu '{args.WorkflowName}'");
             if (_menuControllers != null && _menuControllers.TryGetValue(args.WorkflowName.ToLower(), out MenuController controller))
             {
-                Debug.Log($"UITool: Toggling menu for workflow '{args.WorkflowName}'.");
                 controller.ToggleMenu();
             }
             else

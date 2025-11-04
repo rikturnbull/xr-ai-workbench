@@ -51,7 +51,9 @@ namespace XrOpenAI
             return headers;
         }
 
-        public async Task<bool> Connect(string url, string apiKey)
+        public bool IsConnected => _isConnected;
+
+        public async Task Connect(string url, string apiKey)
         {
             try
             {
@@ -82,13 +84,11 @@ namespace XrOpenAI
 
                 Dictionary<string, string> headers = GetHeaders(apiKey);
                 await _webSocket.Connect(url, headers);
-                return true;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
                 onError?.Invoke($"Error: {e.Message}");
-                return false;
             }
         }
 

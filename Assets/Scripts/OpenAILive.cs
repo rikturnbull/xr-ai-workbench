@@ -20,14 +20,13 @@ public class OpenAILive : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _statusText;
     [SerializeField] private TextMeshProUGUI _agentTranscriptText;
     [SerializeField] private bool _autoConnectOnStart = false;
-    // [SerializeField] private CubeBehaviour _cubeBehaviour;
 
     [Header("Audio")]
     [HideInInspector][SerializeField] private int _selectedMicrophoneIndex = 0;
 
     private Dictionary<string, MenuController> _menuControllers = new Dictionary<string, MenuController>();
     private OpenAIRealtimeClient _openAiRealTimeClient;
-    private bool _isConnected = false;
+    // private bool _isConnected = false;
     private XrAiSecretsManager _secretsManager;
 
     private IEnumerator Start()
@@ -58,7 +57,6 @@ public class OpenAILive : MonoBehaviour
             MenuController controller = GetMenuController(workflow);
             if (controller != null && !_menuControllers.ContainsKey(workflow))
             {
-                Debug.Log($"OpenAILive: Found MenuController for workflow '{workflow}'");
                 _menuControllers.Add(workflow[..^7].ToLower(), controller);
             }
             else
@@ -128,13 +126,12 @@ public class OpenAILive : MonoBehaviour
 
     public IEnumerator OnClickCoroutine()
     {
-        if (_isConnected)
+        if (_openAiRealTimeClient.IsConnected())
         {
             Task task = Disconnect();
             yield return new WaitUntil(() => task.IsCompleted);
             if (task.IsFaulted)
             {
-                Debug.LogError("Disconnection task failed: " + task.Exception);
                 OnError("Disconnection failed: " + task.Exception?.GetBaseException().Message);
             }
         }
@@ -144,7 +141,6 @@ public class OpenAILive : MonoBehaviour
             yield return new WaitUntil(() => task.IsCompleted);
             if (task.IsFaulted)
             {
-                Debug.LogError("Connection task failed: " + task.Exception);
                 OnError("Connection failed: " + task.Exception?.GetBaseException().Message);
             }
         }
@@ -152,34 +148,30 @@ public class OpenAILive : MonoBehaviour
 
     private async Task Connect()
     {
-        if (_isConnected) return;
+        if (_openAiRealTimeClient.IsConnected()) return;
 
         UITool uiTool = new(_openAiRealTimeClient);
         List<Tool> tools = uiTool.GetTools(_menuControllers);
         Dictionary<string, Action<string, string>> functionHandlers = uiTool.GetHandlers();
 
         OnStatus("Connecting to OpenAI Realtime API...");
-        _isConnected = await _openAiRealTimeClient.Connect(_secretsManager.GetSecret("OpenAI"), _systemPrompt, _voice.ToString(), tools, functionHandlers);
-
-        if (!_isConnected) OnError("Failed to connect to OpenAI");
-        else OnStatus("Connected to OpenAI Realtime API");
+        await _openAiRealTimeClient.Connect(_secretsManager.GetSecret("OpenAI"), _systemPrompt, _voice.ToString(), tools, functionHandlers);
     }
 
     public async Task Disconnect()
     {
-        if (!_isConnected) return;
+        if (!_openAiRealTimeClient.IsConnected()) return;
         if (_openAiRealTimeClient != null)
         {
             await _openAiRealTimeClient.Close();
         }
-        _isConnected = false;
         OnStatus("Disconnected");
     }
 
     private void OnError(string errorMessage) {
-        Debug.LogError($"OpenAILive: {errorMessage}");
         _statusText.text = errorMessage;
     }
+
     private void OnStatus(string status) => _statusText.text = status;
     private void OnTranscription(string transcription) => _agentTranscriptText.text = transcription;
 

@@ -75,22 +75,17 @@ namespace XrOpenAI
             return $"{url}?model={model}";
         }
 
-        public async Task<bool> Connect(string apiKey, string systemPrompt, string voice, List<Tool> tools = null, Dictionary<string, Action<string, string>> functionHandlers = null)
+        public async Task Connect(string apiKey, string systemPrompt, string voice, List<Tool> tools = null, Dictionary<string, Action<string, string>> functionHandlers = null)
         {
             try
             {
-                Debug.Log("OpenAIRealtimeClient:Connecting to OpenAI Realtime WebSocket...");
                 SetContext(systemPrompt, voice, tools, functionHandlers);
-                Debug.Log("OpenAIRealtimeClient: Connecting to WebSocket URL: " + GetUrl(WEBSOCKET_URL, MODEL));
                 await _openAiWebSocketClient.Connect(GetUrl(WEBSOCKET_URL, MODEL), apiKey);
-                Debug.Log("OpenAIRealtimeClient: Connected to OpenAI Realtime WebSocket");
-                return true;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
                 onError?.Invoke($"Connection failed: {e.Message}");
-                return false;
             }
         }
 
@@ -137,22 +132,11 @@ namespace XrOpenAI
             }
         }
 
-        // public async Task CancelCurrentResponse()
-        // {
-        //     try
-        //     {
-        //         var cancelRequest = new
-        //         {
-        //             type = "response.cancel"
-        //         };
-        //         await _openAiWebSocketClient.SendRequest(cancelRequest);
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         Debug.LogException(e);
-        //     }
-        // }
-       
+        public bool IsConnected()
+        {
+            return _openAiWebSocketClient != null && _openAiWebSocketClient.IsConnected;
+        }
+
         private void OnAudioSpeechStarted()
         {
             _audioManager.StopCurrentAudioPlayback();
@@ -291,14 +275,13 @@ namespace XrOpenAI
             if (_openAiWebSocketClient != null)
             {
                 await _openAiWebSocketClient.Close();
-                _openAiWebSocketClient = null;
             }
 
-            if (_audioManager != null)
-            {
-                _audioManager.Close();
-                _audioManager = null;
-            }
+            // if (_audioManager != null)
+            // {
+            //     _audioManager.Close();
+            //     _audioManager = null;
+            // }
         }
     }
 }

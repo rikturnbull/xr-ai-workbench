@@ -30,7 +30,7 @@ namespace XrOpenAI
             return gameObject.AddComponent<WebSocketClient>();
         }
 
-        public async Task<bool> Connect(string url, Dictionary<string, string> headers)
+        public async Task Connect(string url, Dictionary<string, string> headers)
         {
             try
             {
@@ -42,13 +42,11 @@ namespace XrOpenAI
                 _webSocket.OnClose += (closeCode) => onClose?.Invoke(closeCode);
 
                 await _webSocket.Connect();
-                return true;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
                 onError?.Invoke($"Connection failed: {e.Message}");
-                return false;
             }
         }
 

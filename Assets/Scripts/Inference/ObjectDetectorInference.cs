@@ -27,6 +27,7 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
             float startTime = Time.time;
             while (Time.time - startTime < 30f)
             {
+                StartTimer();
                 Texture2D texture = GetTexture();
                 if (texture == null)
                 {
@@ -40,6 +41,7 @@ public class ObjectDetectorInference : BaseAiInference<IXrAiObjectDetector, XrAi
                     callback
                 ).WithCancellation(_cancellationTokenSource.Token);
                 yield return new WaitUntil(() => _currentTask.IsCompleted || _cancellationTokenSource.Token.IsCancellationRequested);
+                StopTimer();
             }
         }
         else
