@@ -217,7 +217,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.8.23",
+      "version": "1.8.25",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -234,11 +234,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
-      "version": "2.5.7",
+      "version": "2.6.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.8.19",
+        "com.unity.burst": "1.8.23",
         "com.unity.mathematics": "1.3.2",
         "com.unity.test-framework": "1.4.6",
         "com.unity.nuget.mono-cecil": "1.11.5",
@@ -422,7 +422,7 @@
       }
     },
     "com.unity.test-framework": {
-      "version": "1.5.1",
+      "version": "1.6.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
@@ -432,7 +432,7 @@
       }
     },
     "com.unity.test-framework.performance": {
-      "version": "3.1.0",
+      "version": "3.2.0",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -481,7 +481,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.core-utils": {
-      "version": "2.5.2",
+      "version": "2.5.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -588,15 +588,22 @@
       },
       "url": "https://package.openupm.com"
     },
-    "com.xrai.accelerator": {
-      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git",
+    "uk.co.controlz.xrai.accelerator": {
+      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git#0.0.2",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.openai.unity": "8.8.1",
         "com.unity.ai.inference": "2.2.1"
       },
-      "hash": "7d1eaae37798f5860e709bcd746755b8f9cee211"
+      "hash": "7a9f199d8ad8ea2030483efd1012a3de4ebbf60a"
+    },
+    "uk.co.controlz.xrai.aws": {
+      "version": "https://github.com/rikturnbull/xr-ai-aws-services.git#1.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2dee06170fc46103c67648d3e8e099fc4882f8fd"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
