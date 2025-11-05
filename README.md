@@ -1,6 +1,6 @@
 # XR AI Workbench
 
-A Unity-based XR AI workbench built on Unity 6.2 (6000.2.0f1).
+A Unity-based XR AI workbench built on Unity 6.2 (6000.2.10f1).
 
 ![Screenshot](screenshot.png)
 
@@ -50,5 +50,5 @@ Use these names:
 - "Transcribe"
 
 ## Requirements
-- Unity 6000.2.0f1
+- Unity 6000.2.10f1
 - Valid API Keys for AI providers

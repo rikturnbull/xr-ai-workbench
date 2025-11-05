@@ -46,6 +46,7 @@ public class MenuBuilder : MonoBehaviour
     private GameObject CreateButton(string providerName)
     {
         GameObject button = Instantiate(Resources.Load<GameObject>("Prefabs/Button"), transform, false);
+        button.name = providerName;
         SetText(button, providerName);
         SetImage(button, providerName);
         return button;

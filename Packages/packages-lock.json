@@ -589,21 +589,21 @@
       "url": "https://package.openupm.com"
     },
     "uk.co.controlz.xrai.accelerator": {
-      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git#gemini",
+      "version": "https://github.com/rikturnbull/xr-ai-accelerator.git#0.0.2",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.openai.unity": "8.8.1",
         "com.unity.ai.inference": "2.2.1"
       },
-      "hash": "8c5c6336181048e931d768ca37f91bfaaa262d88"
+      "hash": "7a9f199d8ad8ea2030483efd1012a3de4ebbf60a"
     },
     "uk.co.controlz.xrai.aws": {
-      "version": "https://github.com/rikturnbull/xr-ai-aws-services.git#namespace",
+      "version": "https://github.com/rikturnbull/xr-ai-aws-services.git#1.0.0",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c8da29143d700008b53e890b90a816bed12b5288"
+      "hash": "2dee06170fc46103c67648d3e8e099fc4882f8fd"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

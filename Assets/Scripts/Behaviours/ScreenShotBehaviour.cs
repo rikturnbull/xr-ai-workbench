@@ -13,7 +13,6 @@ public class ScreenShotBehaviour : MonoBehaviour
     [SerializeField] private WebCamTextureManager _webCamTextureManager;    
     [SerializeField] private string _resourceImagePath = "Images/room";
 
-    private bool _loadVideo = true;
     private int _screenshotStep = 0;
 
     public System.Action<Texture2D> OnScreenshotCaptured;

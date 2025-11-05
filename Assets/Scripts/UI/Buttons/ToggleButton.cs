@@ -56,7 +56,6 @@ public class ToggleButton : MonoBehaviour
                 buttonPanel = buttonPanelTransform.gameObject;
                 colorVisual = buttonPanel.GetComponent<InteractableColorVisual>();
                 buttonRenderer = buttonPanel.GetComponent<MeshRenderer>();
-                Debug.Log($"Found ButtonPanel automatically: {buttonPanel.name}");
             }
             else
             {
@@ -69,13 +68,12 @@ public class ToggleButton : MonoBehaviour
         {
             buttonMaterial = new Material(buttonRenderer.material);
             buttonRenderer.material = buttonMaterial;
-            Debug.Log($"Created material instance for {buttonPanel.name}");
         }
 
         // Connect to the interaction events
-        if(!_ignoreButtonPress)
+        if (!_ignoreButtonPress)
         {
-            if(eventWrapper != null)
+            if (eventWrapper != null)
             {
                 eventWrapper.WhenSelect.AddListener(OnButtonPressed);
             }
@@ -84,14 +82,13 @@ public class ToggleButton : MonoBehaviour
                 Debug.LogError("InteractableUnityEventWrapper not found on the ToggleButton!");
             }
         }
-        
+
         // Set initial visual state
         UpdateVisualState();
     }
 
     public void OnButtonPressed()
     {
-        Debug.Log($"{DateTime.Now:HH:mm:ss.fff}Button pressed: {(isToggled ? "ON" : "OFF")} - Color: {(isToggled ? selectedColor : normalColor)}");
         // Toggle the state
         isToggled = !isToggled;
 
@@ -114,8 +111,6 @@ public class ToggleButton : MonoBehaviour
 
         // Trigger appropriate events
         TriggerToggleEvents();
-
-        Debug.Log($"{DateTime.Now:HH:mm:ss.fff}Button toggled: {(isToggled ? "ON" : "OFF")} - Color: {(isToggled ? selectedColor : normalColor)}");
     }
     
     private void UntogglePeers()
@@ -150,7 +145,6 @@ public class ToggleButton : MonoBehaviour
                 
             // Set to selected color when toggled on
             buttonMaterial.color = selectedColor;
-            Debug.Log($"Setting color to select: {selectedColor}");
         }
         else
         {
@@ -160,10 +154,9 @@ public class ToggleButton : MonoBehaviour
                 
             // Set to normal color when toggled off
             buttonMaterial.color = normalColor;
-            Debug.Log($"Setting color to normal: {normalColor}");
         }
     }
-    
+
     // Override the normal hover behavior when toggled
     void Update()
     {
@@ -173,8 +166,12 @@ public class ToggleButton : MonoBehaviour
             buttonMaterial.color = selectedColor;
         }
     }
-    
-    // FIXED: Public methods to control toggle state - NOW TRIGGERS EVENTS!
+
+    public bool IsToggled()
+    {
+        return isToggled;
+    }
+
     public void SetToggle(bool state)
     {
         bool wasToggled = isToggled;
